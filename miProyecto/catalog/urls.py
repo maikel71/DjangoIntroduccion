@@ -1,5 +1,5 @@
 # Agregamos
-from django.conf.urls import url
+from django.urls import re_path
 from . import views
 
 urlpatterns = [
@@ -9,5 +9,5 @@ urlpatterns = [
     # cuando la peticion sea nada va a tener que disparar
     # la funcion index del modulo views(views.index)
     # y se va a llamar index(name='index')
-    url(r'^$', views.index, name='index')
+    re_path(r'^$', views.index, name='index')
 ]
