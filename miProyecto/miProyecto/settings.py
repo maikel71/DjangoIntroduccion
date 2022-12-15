@@ -79,7 +79,11 @@ WSGI_APPLICATION = 'miProyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # aqui ponemos str(...) por el motivo que nos salia un error
+        # al momento de poner el comando en el cmd
+        # py manage.py makemigrations
+        # py manage.py migrate
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
 
